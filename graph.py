@@ -25,14 +25,14 @@ y=[None]*5
 #def capture_y_0():
 #   y[0]=y_0
 #   #return True
-st.write("Введите 5 значений углового ускорения в рад/(с$^{2}$)")
+st.write("Введите 5 значений углового ускорения в А/(м$^{2}$)")
 row1 = st.columns(5)
 #row1.subheader("X")
 for i, col in enumerate(row1):
 #on_change=capture_x_0,
     inp_key="x_"+str(i)
     x[i]=col.number_input("", key=inp_key)
-st.write("Введите 5 значений момента силы в 10$^{-3}$ Н*м")
+st.write("Введите 5 значений момента силы в В/м")
 row2 = st.columns(5)
 for i, col in enumerate(row2):
     inp_key="y_"+str(i)
@@ -44,8 +44,8 @@ Y=np.array(y)
 #st.write(X,Y)
 fig, ax = plt.subplots(figsize=(5, 3))
 ax.scatter(X[(X!=0) & (Y!=0)],Y[(X!=0) & (Y!=0)])
-ax.set_xlabel("$\epsilon$, рад/(с$^{2}$)")
-ax.set_ylabel("M, 10$^{-3}$ Н*м")
+ax.set_xlabel("$\epsilon$, А/(м$^{2}$)")
+ax.set_ylabel("В, м")
 ax.set_xlim(left=0)
 ax.set_ylim(bottom=0)
 ax.tick_params(axis='both',which='both', direction="in", labelsize=10)
